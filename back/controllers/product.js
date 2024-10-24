@@ -47,6 +47,7 @@ exports.getOneProduct = (req, res, next) => {
  *
  */
 exports.orderProducts = (req, res, next) => {
+  // return res.status(200)
   if (!req.body.contact ||
       !req.body.contact.firstName ||
       !req.body.contact.lastName ||
@@ -86,6 +87,7 @@ exports.orderProducts = (req, res, next) => {
     }
   ).catch(
     (error) => {
+      console.log(`Error:${error}`)
       return res.status(500).json(new Error(error));
     }
   );
